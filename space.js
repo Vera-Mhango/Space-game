@@ -25,6 +25,22 @@ document.addEventListener('keydown', e => {
 
 game.addEventListener('click', shoot);
 
+// MOBILE CONTROLS
+document.getElementById("leftBtn").addEventListener("touchstart", () => {
+  playerX -= 25;
+  updatePlayer();
+});
+
+document.getElementById("rightBtn").addEventListener("touchstart", () => {
+  playerX += 25;
+  updatePlayer();
+});
+
+document.getElementById("shootBtn").addEventListener("touchstart", () => {
+  shoot();
+});
+
+
 function updatePlayer() {
   player.style.backgroundImage = "url('space ship.jpg')";
   playerX = Math.max(40, Math.min(window.innerWidth - 40, playerX));
@@ -177,3 +193,4 @@ setInterval(() => {
 }, 1200);
 
 updatePlayer();
+
