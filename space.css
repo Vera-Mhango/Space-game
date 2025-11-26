@@ -146,3 +146,102 @@ body {
 #gameOver button:hover {
   transform: scale(1.08);
 }
+
+/* --- MOBILE OPTIMIZATION --- */
+@media (max-width: 768px) {
+
+  #score, #lives {
+    font-size: 18px;
+    top: 10px;
+  }
+
+  #player {
+    width: 55px;
+    height: 55px;
+    bottom: 40px;
+  }
+
+  .alien {
+    width: 55px;
+    height: 55px;
+  }
+
+  .bullet {
+    width: 4px;
+    height: 14px;
+  }
+
+  /* Bigger hitboxes = easier mobile gameplay */
+  #player, .alien {
+    touch-action: none;
+  }
+
+  /* Make gameOver UI scale nicely */
+  #gameOver {
+    width: 80%;
+    padding: 25px;
+  }
+
+  #gameOver h1 {
+    font-size: 32px;
+  }
+
+  #gameOver button {
+    font-size: 20px;
+    padding: 12px 25px;
+  }
+}
+
+/* ULTRA-SMALL SCREENS */
+@media (max-width: 480px) {
+  #player {
+    width: 45px;
+    height: 45px;
+  }
+
+  .alien {
+    width: 45px;
+    height: 45px;
+  }
+
+  #score, #lives {
+    font-size: 16px;
+  }
+}
+
+/* TOUCH CONTROL BUTTONS */
+#controls {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  z-index: 20;
+}
+
+#controls button {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(0,255,255,0.2);
+  border: 2px solid cyan;
+  color: white;
+  font-size: 32px;
+  backdrop-filter: blur(4px);
+  touch-action: manipulation;
+}
+
+#controls button:active {
+  transform: scale(1.1);
+  background: cyan;
+  color: black;
+}
+
+/* Smaller buttons for small phones */
+@media (max-width: 480px) {
+  #controls button {
+    width: 60px;
+    height: 60px;
+    font-size: 26px;
+  }
+}
